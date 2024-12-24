@@ -1,0 +1,68 @@
+body {
+  font-family: 'Times New Roman', serif;
+  font-size: 14px; /* Slightly larger font size */
+  line-height: 1.6;
+  color: #333;
+  background-image: url('{{ url_for('static', filename='lady_justice.jpg') }}');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.85); /* Increased opacity for better contrast */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px; /* Increased padding for better spacing */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px; /* Increased spacing below header */
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+p {
+  text-indent: 2em;
+  color: #333;
+}
+
+nav {
+  margin-bottom: 40px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
