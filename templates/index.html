@@ -3,6 +3,28 @@
 <head>
     <title>Your Dream, Our Mission</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='Styles.css') }}">
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 500px;
+            z-index: 9999;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #aaa;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,10 +34,9 @@
 
     <nav class="container">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="#" onclick="openAboutPopup()">About Us</a></li>
+            <li><a href="#" onclick="openServicesPopup()">Services</a></li>
+            <li><a href="#" onclick="openContactPopup()">Contact</a></li>
         </ul>
     </nav>
 
@@ -35,9 +56,48 @@
         </ul>
     </section>
 
+    <div id="aboutPopup" class="popup">
+        <span class="close-button" onclick="closePopup()">×</span>
+        <h2>About Us</h2>
+        <p>This is the content of your About Us page.
+           You can add more details, images, and links here.</p>
+    </div>
+
+    <div id="servicesPopup" class="popup">
+        <span class="close-button" onclick="closePopup()">×</span>
+        <h2>Services</h2>
+        <p>This is the content of your Services page.</p>
+    </div>
+
+    <div id="contactPopup" class="popup">
+        <span class="close-button" onclick="closePopup()">×</span>
+        <h2>Contact</h2>
+        <p>This is the content of your Contact page.</p>
+    </div>
+
     <footer class="container">
         <p>&copy; 2024 Your Dream Our Mission. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function openAboutPopup() {
+            document.getElementById("aboutPopup").style.display = "block";
+        }
+
+        function openServicesPopup() {
+            document.getElementById("servicesPopup").style.display = "block";
+        }
+
+        function openContactPopup() {
+            document.getElementById("contactPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("aboutPopup").style.display = "none";
+            document.getElementById("servicesPopup").style.display = "none";
+            document.getElementById("contactPopup").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
